@@ -239,7 +239,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   devise
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   faker
   figaro (= 1.0)
   jquery-rails
@@ -248,7 +248,7 @@ DEPENDENCIES
   rails (= 4.2.5)
   rails_12factor
   react-rails
-  rspec-rails
+  rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   shoulda
   spring
