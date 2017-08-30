@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "user visits the root page", :type => :feature do
   it "takes them to the profile page" do
     visit root_path
-    expect(page).to have_content 'Log in'
+    expect(page).to have_content 'Sign In'
   end
 end
 
@@ -20,5 +20,14 @@ describe "user signs in", :type => :feature do
   it "unsuccessfully" do
     visit new_user_session_path
     expect(page).to have_content 'Log in'
+  end
+end
+
+feature "Create to-do items" do
+  scenario "can create an item" do
+    visit '/'
+    click_link 'New Task'
+    fill_in 'Task', with: 'Eat Lunch'
+    expect(page).to have_content 'Eat Lunch'
   end
 end
