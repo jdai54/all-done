@@ -24,6 +24,9 @@ describe "user signs in", :type => :feature do
 end
 
 feature "Create to-do items" do
+  user = FactoryGirl.create(:user)
+  login_as(user, :scope => :user)
+  
   scenario "can create an item" do
     visit '/'
     click_link 'New Task'
