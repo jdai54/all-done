@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :new]
   end
 
-  get 'items/create'
+  post 'items/create'
   get 'users/show'
   get 'welcome/index'
   get 'welcome/about'
