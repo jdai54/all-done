@@ -3,12 +3,14 @@ require 'rails_helper'
 describe "user visits the root page", :type => :feature do
   it "takes them to the profile page" do
     visit root_path
-    expect(page).to have_content 'Log in'
+    expect(page).to have_content 'Sign In'
   end
 end
 
 describe "user signs in", :type => :feature do
-  let(:user) { create(:user, email: 'user@example.com', password: 'password', password_confirmation: 'password') }
+  User.destroy_all
+  let(:user) { FactoryGirl.create(:user) }
+
   it "successfully" do
     visit user_session_path
     fill_in 'Email', with: user.email
@@ -20,5 +22,18 @@ describe "user signs in", :type => :feature do
   it "unsuccessfully" do
     visit new_user_session_path
     expect(page).to have_content 'Log in'
+  end
+end
+
+feature "Create to-do items" do
+  User.destroy_all
+  let(:user) { FactoryGirl.create(:user) }
+
+  scenario "can create an item" do
+    login_as(user, :scope => :user)
+    visit '/'
+    fill_in 'item_name', with: 'Eat Lunch'
+    click_on 'Save'
+    expect(page).to have_content 'Eat Lunch'
   end
 end

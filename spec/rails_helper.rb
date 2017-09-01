@@ -38,7 +38,13 @@ RSpec.configure do |config|
 
   config.include Devise::Test::ControllerHelpers, type: :view
 
+  config.include Warden::Test::Helpers
+
   config.include FactoryGirl::Syntax::Methods
+
+  config.after :each do
+    Warden.test_reset!
+  end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

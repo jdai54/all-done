@@ -1,2 +1,14 @@
-<h1>What will you accomplish today?</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <h1>What will you accomplish today?</h1>
+</div>
+
+<div class="container">
+  <h2>To Do List</h2>
+  <table>
+    <% @items.each do |item| %>
+      <%= render item %>
+    <% end %>
+  </table>
+    <!-- <%= link_to "New Task", new_user_item_path(current_user), class: 'btn btn-success' %> -->
+    <%= render 'items/form', item: Item.new, user: @user %>
+</div>
