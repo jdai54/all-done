@@ -37,3 +37,18 @@ feature "Create to-do items" do
     expect(page).to have_content 'Eat Lunch'
   end
 end
+
+feature "Delete to-do items" do
+  User.destroy_all
+  let(:user) { FactoryGirl.create(:user) }
+
+  scenario "can create an item" do
+    login_as(user, :scope => :user)
+    visit '/'
+    fill_in 'item_name', with: 'Eat Lunch'
+    click_on 'Save'
+    expect(page).to have_content 'Eat Lunch'
+    find('.glyphicon.glyphicon-ok').click
+    expect(page).not_to have_content 'Eat Lunch'
+  end
+end
