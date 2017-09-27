@@ -22,6 +22,8 @@ gem 'figaro', '1.0'
 gem 'react-rails'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'faker'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug'
