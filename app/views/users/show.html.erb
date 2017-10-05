@@ -1,14 +1,19 @@
-<div class="container">
-  <h1>What will you accomplish today?</h1>
-</div>
-
-<div class="container">
-  <h2>To Do List</h2>
-  <table>
-    <% @items.each do |item| %>
-      <%= render item %>
-    <% end %>
-  </table>
-    <!-- <%= link_to "New Task", new_user_item_path(current_user), class: 'btn btn-success' %> -->
-    <%= render 'items/form', item: Item.new, user: @user %>
+<div class="container todolist">
+  <body class="list-background">
+    <div class>
+      <h1>What will you accomplish today?</h1>
+      <table>
+        <tr>
+          <th></th>
+          <th>Description</th>
+          <th>Days Left</th>
+        </tr>
+        <% @items.each do |item| %>
+          <%= render item %>
+        <% end %>
+      </table>
+        <!-- <%= link_to "New Task", new_user_item_path(current_user), class: 'btn btn-success' %> -->
+        <%= render 'items/form', item: Item.new, user: @user %>
+    </div>
+  </body>
 </div>

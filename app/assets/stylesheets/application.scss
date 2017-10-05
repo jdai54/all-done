@@ -15,3 +15,99 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+
+.background {
+  height: 100%;
+  background-color: #26466D;
+}
+
+.jumbotron {
+  text-align: center;
+  border: 1px solid black;
+  height: 100%;
+  background-color: #B7C3D0;
+}
+
+h1 {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 25px;
+}
+
+.styled-font {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.field {
+  padding: 7px;
+}
+
+.nav {
+  padding-right: 15px;
+  background-color: #FF8C00;
+  border: none;
+  color: white;
+  width: 100%;
+}
+
+.nav a {
+  color: #DFE2DB;
+}
+
+.user-info {
+  margin-top: 9px;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  table {
+    width: 730px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border-collapse: separate;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid lightgrey;
+  font-size: 16px;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px;
+}
+
+tr:hover {background-color: #f5f5f5}
+
+.list-background {
+  height: 100%;
+  background-color: #B7C3D0;
+}
+
+.todolist {
+  background-color: white;
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.todolist h1 {
+  text-align: center;
+}
